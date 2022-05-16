@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(180, 138, 219);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai um resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript!</p>
+    <div id="mensagem">Clique em mim</div>
+    <script>
+        var corpo = window.document.body;
+        var p1 = window.document.getElementsByTagName("p")[1]; //Para selecionar o primeiro <p> utiliza-se o índice 0
+        corpo.style.background = "yellow";
+        p1.style.color = "black";
+        window.document.write(`A primeira tag 'p' possui o seguinte conteúdo: ${p1.innerHTML}`);
+        
+        var d = window.document.getElementById("mensagem");
+        d.style.background = "green";
+        window.document.getElementById("mensagem").innerText = "Mudança do conteúdo da DIV";
+        //O comando acima pode ser simplificado e escrito da seguinte forma: d.innerText = "Mudança do conteúdo da DIV"
+    
+        var t = window.document.querySelector("div#mensagem"); //id = #; class = .
+        window.document.querySelector("div#mensagem").style.color = "brown";
+        //O comando acima pode ser simplificado e escrito da seguinte forma: t.style.color = "brown"
+    </script>
+</body>
+</html>
